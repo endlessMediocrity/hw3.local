@@ -11,7 +11,7 @@
 
     <form action="with_img.php" method="post" enctype="multipart/form-data">
         <label>
-            <p>Вставьте изображение</p> <input type="file" name="new_img">
+            <p>Вставьте изображение(только файлы типа JPEG и PNG)</p> <input type="file" name="new_img">
         </label>
         <br>
         <br>

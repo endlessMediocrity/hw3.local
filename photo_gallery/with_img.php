@@ -13,7 +13,13 @@
     <?php
         if (isset ($_FILES['new_img'])) {
             if (0 == $_FILES['new_img']['error']) {
-                move_uploaded_file($_FILES['new_img']['tmp_name'], __DIR__ . '/images/new_1');
+                if ('jpeg' == substr($_FILES['new_img']['name'], -4) or
+                    'png' == substr($_FILES['new_img']['name'], -3) or
+                    'jpg' == substr($_FILES['new_img']['name'], -3)) {
+                    move_uploaded_file(
+                        $_FILES['new_img']['tmp_name'],
+                        __DIR__ . '/images/' . $_FILES['new_img']['name']);
+                }
             }
         }
 
